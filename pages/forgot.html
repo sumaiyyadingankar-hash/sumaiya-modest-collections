@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot Password - Sumaiya Store</title>
+  <link rel="icon" href="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196508/forgotIcon_wxxrl0.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/style.css?v=1.0">
+   <link rel="stylesheet" href="../assets/css/auth-common.css">
+  <link rel="stylesheet" href="../assets/css/forgot.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="shape-area">
+      <i class="fas fa-arrow-left back-btn"></i>
+      <h2>Reset<br>Password</h2>
+    </div>
+
+    <!-- Forgot Password Form -->
+    <form class="forgot-form">
+      <p class="text-info">Enter your registered email to receive reset instructions.</p>
+
+      <label>Email Address</label>
+      <input type="email" placeholder="Enter your email" required autocomplete="email">
+
+      <button type="submit" class="reset-btn">Send Reset Link →</button>
+    </form>
+
+    <div class="bottom-links">
+      <a href="./login.html">Back to Login</a>
+    </div>
+
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastBox"></div>
+
+  <script type="module" src="../assets/js/forgot.js?v=1.0"></script>
+</body>
+
+</html>

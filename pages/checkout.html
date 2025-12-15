@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout — Sumaiya Trendy Collection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    :root {
+      --bg: #f7f7fb;
+      --card: #ffffff;
+      --muted: #8b8f98;
+      --shadow: 0 8px 30px rgba(42, 52, 75, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", system-ui;
+      margin: 0;
+      color: #222;
+      padding: 28px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 18px auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .checkout-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    p.lead {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    form .row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    form label {
+      font-size: 13px;
+      margin-bottom: 6px;
+      color: #444;
+      font-weight: 600;
+      display: block;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 11px 12px;
+      border-radius: 10px;
+      border: 1px solid #e6e9ef;
+      font-size: 14px;
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 86px;
+      resize: vertical;
+    }
+
+    .full {
+      grid-column: 1/-1;
+    }
+
+    .summary {
+      background: #fff;
+      padding: 18px;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 28px;
+    }
+
+    .summary .line {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #f1f3f8;
+    }
+
+    .total {
+      padding-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .confirm-btn {
+      width: 100%;
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(107, 107, 255, 0.09);
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 10, 20, 0.45);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 18px;
+    }
+
+    .modal {
+      width: 520px;
+      max-width: 96%;
+      background: #fff;
+      padding: 18px;
+      border-radius: 14px;
+      box-shadow: 0 20px 60px rgba(20, 30, 80, 0.18);
+      animation: pop .22s ease-out forwards;
+    }
+
+    @keyframes pop {
+      from {
+        opacity: 0;
+        transform: translateY(24px) scale(.98);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .btn-primary {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      background: #b45c7b;
+      color: #fff;
+    }
+
+    .btn-ghost {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #e6e9ef;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .success-icon {
+      width: 70px;
+      height: 70px;
+      background: #d4f8df;
+      color: #2d7a41;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      font-size: 36px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #d6f3d9;
+    }
+
+    @media(max-width:880px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .summary {
+        position: static;
+        margin-top: 12px;
+      }
+    }
+
+    .confirm-btn {
+      background: #b45c7b;
+    }
+
+    @media (max-width: 600px) {
+      form .row {
+        grid-template-columns: 1fr;
+        /* stack fields vertically */
+        gap: 12px;
+      }
+
+      .modal {
+        padding-top: 50px;
+        /* add extra space for close button */
+      }
+
+      #closeModal {
+        top: 10px;
+        /* inside the new padding space */
+        right: 10px;
+      }
+
+    }
+
+    /* Animation */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("31pEB3ciOsV3rPint");
+    })();
+  </script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- Checkout Form -->
+    <section class="checkout-card">
+      <div class="checkout-header">
+        <div>
+          <h1>Checkout</h1>
+          <p class="lead">Almost there! Fill your details. ✨</p>
+        </div>
+      </div>
+      <form id="checkoutForm" novalidate>
+        <div class="row">
+          <div><label>Full name</label><input id="name" type="text" placeholder="Sumaiya Dingankar" required></div>
+          <div><label>Email</label><input id="email" type="email" placeholder="you@example.com" required></div>
+          <div><label>Mobile</label><input id="mobile" type="tel" placeholder="+91 98xxxxxxx" required></div>
+          <div><label>City</label><input id="city" type="text" placeholder="Pune" required></div>
+          <div class="full"><label>Address</label><textarea id="address" placeholder="House no, area, landmark..."
+              required></textarea></div>
+          <div><label>Pincode</label><input id="pincode" type="text" placeholder="4110xx" required></div>
+        </div>
+      </form>
+    </section>
+
+    <!-- Summary -->
+    <aside class="summary">
+      <h3>Order Summary</h3>
+      <div class="line">
+        <div>Items</div>
+        <div id="summaryItems">0</div>
+      </div>
+      <div class="line">
+        <div>Subtotal</div>
+        <div>₹<span id="summarySubtotal">0</span></div>
+      </div>
+      <div class="line">
+        <div>Delivery</div>
+        <div id="summaryDelivery">Free</div>
+      </div>
+      <div class="total">
+        <div>Grand Total</div>
+        <div>₹<span id="summaryGrandTotal">0</span></div>
+      </div>
+      <button id="openGateway" class="confirm-btn">Proceed to payment</button>
+    </aside>
+  </div>
+
+  <!-- Payment Modal -->
+  <div class="overlay" id="gatewayOverlay">
+    <div class="modal">
+      <div id="gatewayFormArea" style="margin-top:12px;">
+        <div
+          style="margin-bottom:12px;font-size:13px;font-weight:600;color:#555; display:flex; align-items:center; gap:10px;">
+          <span>Cards Accepted:</span>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlepay.svg" style="height:22px;"
+              alt="GPay">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" style="height:22px;"
+              alt="Mastercard">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/paypal.svg" style="height:22px;"
+              alt="PayPal">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" style="height:22px;"
+              alt="Visa">
+          </div>
+        </div>
+
+        <label>Card Number</label><input id="cardNumber" maxlength="19" placeholder="4244 4244 4244 4244">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;">
+          <div><label>Expiry</label><input id="cardExp" maxlength="5" placeholder="MM/YY"></div>
+          <div><label>CVV</label><input id="cardCvv" maxlength="4" placeholder="123"></div>
+        </div>
+        <label style="margin-top:12px;">Name on card</label>
+        <input id="cardName" placeholder="Sumaiya Dingankar">
+        <div style="display:flex;gap:10px;margin-top:14px;">
+          <button id="btnPayNow" class="btn-primary">Pay ₹0</button>
+        </div>
+      </div>
+
+      <!-- Success -->
+      <div id="successArea" style="display:none; text-align:center; padding:25px;animation: fadeInUp 1s ease;">
+        <div class="success-icon">✔</div>
+        <h3 style="margin-top:15px;font-size:20px;color:#2d7a41;font-weight:600;">Order Placed Successfully!</h3>
+        <p style="color:#666;margin-top:5px;">Thank you for shopping with us 💕</p>
+        <button id="closeSuccessBtn"
+          style="margin-top:20px;background:#b45c7b;color:white;padding:10px 20px;border:none;border-radius:8px;font-size:15px;cursor:pointer;">Continue
+          Shopping</button>
+      </div>
+
+      <button id="closeModal" class="btn-ghost" style="position:absolute; top:12px; right:12px;">✕</button>
+    </div>
+  </div>
+  <!-- Toast Notification Container -->
+  <div id="toastBox"></div>
+
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const summaryItems = document.getElementById("summaryItems");
+    const summarySubtotal = document.getElementById("summarySubtotal");
+    const summaryGrandTotal = document.getElementById("summaryGrandTotal");
+
+    function formatAmount(n) { return Number(n).toFixed(2).replace('.00', ''); }
+    function calcSummary() {
+      let subtotal = 0;
+      cart.forEach(it => {
+        subtotal += parseFloat((it.price || "0").toString().replace(/[^0-9.]/g, "")) * (it.qty || 1);
+      });
+      summaryItems.textContent = cart.length;
+      summarySubtotal.textContent = formatAmount(subtotal);
+      summaryGrandTotal.textContent = formatAmount(subtotal);
+      document.getElementById("btnPayNow").textContent = "Pay ₹" + formatAmount(subtotal);
+    }
+    calcSummary();
+
+    const overlay = document.getElementById("gatewayOverlay");
+    document.getElementById("openGateway").addEventListener("click", () => {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const mobile = document.getElementById("mobile").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const pincode = document.getElementById("pincode").value.trim();
+      if (!name || !email || !mobile || !city || !address || !pincode) { showToast("Please fill checkout form"); return; }
+      if (cart.length === 0) { showToast("Cart is empty ❤️"); return; }
+      overlay.style.display = "flex";
+    });
+    document.getElementById("closeModal").addEventListener("click", () => overlay.style.display = "none");
+    document.getElementById("btnPayNow").addEventListener("click", () => {
+      const num = document.getElementById("cardNumber").value.trim();
+      const exp = document.getElementById("cardExp").value.trim();
+      const cvv = document.getElementById("cardCvv").value.trim();
+
+      if (!num || num.replace(/\s/g, '').length < 12) { showToast("Enter valid card number"); return; }
+      if (!/^\d{2}\/\d{2}$/.test(exp)) { showToast("Expiry must be MM/YY"); return; }
+      if (!cvv || cvv.length < 3) { showToast("Invalid CVV"); return; }
+
+      // Hide payment form
+      document.getElementById("gatewayFormArea").style.display = "none";
+
+      // Show success message
+      document.getElementById("successArea").style.display = "";
+      // Get user details
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const mobile = document.getElementById("mobile").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const pincode = document.getElementById("pincode").value.trim();
+
+      const totalAmount = document.getElementById("summaryGrandTotal").textContent;
+      const itemsCount = document.getElementById("summaryItems").textContent;
+
+      // Send EmailJS order confirmation email
+      emailjs.send("service_9swpfhd", "template_a96ng1n", {
+        name: name,
+        email: email,
+        mobile: mobile,
+        address: address + " - " + pincode,
+        amount: totalAmount,
+        items: itemsCount
+      }).then(() => {
+        showToast("Order confirmation email sent!");
+        console.log("Email sent successfully");
+      }).catch((err) => {
+        showToast("Failed to send email. Check EmailJS setup.");
+        console.error("Email error:", err);
+      });
+
+
+      // Hide the top-right close button
+      document.getElementById("closeModal").style.display = "none";
+
+      // Clear cart
+      localStorage.setItem("cart", "[]");
+      calcSummary();
+    });
+
+    document.getElementById("closeSuccessBtn").addEventListener("click", () => window.location.href = "../pages/shop.html");
+
+
+  </script>
+
+  <script>
+    function showToast(msg) {
+      const box = document.getElementById("toastBox");
+      const div = document.createElement("div");
+
+      div.className = "toast";
+      div.textContent = msg;
+
+      div.style.background = "#b45c7b";
+      div.style.color = "white";
+      div.style.padding = "10px 16px";
+      div.style.marginTop = "10px";
+      div.style.borderRadius = "8px";
+      div.style.fontSize = "14px";
+      div.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
+      div.style.animation = "fadeIn 0.3s ease";
+
+      box.appendChild(div);
+
+      setTimeout(() => {
+        div.style.opacity = "0";
+        setTimeout(() => div.remove(), 400);
+      }, 2000);
+    }
+  </script>
+
+</body>
+
+</html>

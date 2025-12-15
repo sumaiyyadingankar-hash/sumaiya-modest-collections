@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/product.css">
+</head>
+
+<body>
+
+  <section class="product-details">
+    <div class="product-container">
+
+      <!-- Product Image -->
+      <div class="image-box">
+        <img id="productImage" alt="product">
+      </div>
+
+      <!-- Product Info -->
+      <div class="info">
+        <h1 id="productName"></h1>
+        <h2 id="productPrice"></h2>
+
+        <div class="actions">
+          <button class="add-to-wishlist" id="addToWishlistBtn">Add to Wishlist</button>
+          <button class="add-to-cart" id="addToCartBtn">Add to Cart</button>
+        </div>
+
+        <p class="description" id="productDesc"></p>
+      </div>
+
+    </div>
+  </section>
+
+  <div id="toastBox"></div>
+
+  <script src="../assets/js/global.js"></script>
+  <script src="../assets/js/all-products.js"></script>
+  <script src="../assets/js/product.js"></script>
+</body>
+
+</html>

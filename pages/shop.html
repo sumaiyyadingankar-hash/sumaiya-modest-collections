@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop With Us</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196484/bag_nos7ff.png" type="image/png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css?v=1.0">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    main {
+      padding-top: calc(var(--navbar-height, 80px));
+    }
+  </style>
+</head>
+
+<body>
+  
+  <header>
+    <nav class="navbar">
+      <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765551623/nav-logo_bkc12n.png" alt="nav-logo"
+        class="nav-logo">
+
+      <ul class="nav-menu">
+        <button id="menu-close-button" class="fas fa-times"></button>
+        <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="shop.html" class="nav-link">Shop</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="What are you searching for?">
+      </div>
+
+      <div class="nav-icons">
+
+        <div class="icon home-icon">
+          <a href="../index.html">
+            <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765725575/home_qbxmla.png" alt="Home">
+            <p>Home</p>
+          </a>
+        </div>
+
+        <div class="icon profile-icon">
+          <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196534/user-profile_yvqyuy.png"
+            alt="userprofile">
+          <p>Profile</p>
+        </div>
+        
+        <div class="icon wishlist-icon">
+          <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196538/wishlist_do9wuw.png" alt="wishlist">
+          <p>Wishlist</p>
+          <span class="wishlist-icon-count bag-item-count">0</span>
+
+        </div>
+
+        <div class="icon cart-icon">
+          <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196528/shopping-cart_ygyxc8.png" alt="cart">
+          <p>Cart</p>
+          <span id="cartCount">0</span>
+        </div>
+      </div>
+
+      <button id="menu-open-button" class="fas fa-bars"></button>
+    </nav>
+  </header>
+
+  <!-- Profile Popup Box -->
+  <div id="profilePopup" class="profile-popup">
+    <h3>Please Login Or Register</h3>
+    <div class="popup-buttons">
+      <a href="login.html"><button class="popup-btn">Login</button></a>
+      <a href="register.html"><button class="popup-btn">Register</button></a>
+    </div>
+  </div>
+
+  <!-- Logout Modal -->
+  <div id="logoutModal" class="logout-modal">
+    <div class="logout-content">
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828490.png" class="logout-icon">
+      <h3 class="logout-title">Wait… leaving already?</h3>
+      <p class="logout-sub">Do you really want to log out?</p>
+      <div class="logout-buttons">
+        <button id="cancelLogout" class="btn-cancel">Nope, Stay Logged In</button>
+        <button id="confirmLogout" class="btn-logout">Yes, Log Me Out</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Contact Section -->
+  <main>
+
+    <section class="category-section">
+      <h2 class="section-title">Explore Our Top Categories</h2>
+
+      <div class="categories-grid">
+
+        <!-- Clothing -->
+        <a href="./clothing.html" class="category-card">
+          <div class="cat-img clothing-img"></div>
+          <h3>Clothing</h3>
+        </a>
+
+        <!-- Accessories & Jewellery -->
+        <a href="./accessories.html" class="category-card">
+          <div class="cat-img accessories-img"></div>
+          <h3>Accessories & Jewellery</h3>
+        </a>
+
+        <!-- Beauty & Self Care -->
+        <a href="./beauty.html" class="category-card">
+          <div class="cat-img beauty-img"></div>
+          <h3>Beauty & Self Care</h3>
+        </a>
+
+        <!-- Books -->
+        <a href="./books.html" class="category-card">
+          <div class="cat-img books-img"></div>
+          <h3>Books</h3>
+        </a>
+
+        <!-- Gifts -->
+        <a href="./gifts.html" class="category-card">
+          <div class="cat-img gifts-img"></div>
+          <h3>Gifts</h3>
+        </a>
+
+        <!-- Home Decor -->
+        <a href="./home-decor.html" class="category-card">
+          <div class="cat-img home-img"></div>
+          <h3>Home Decor</h3>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Banner Section -->
+    <section class="website-banner">
+      <!-- Desktop Banner -->
+
+      <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765192956/shop-banner_ibkyhk.png" alt="Sale Banner"
+        class="desktop-banner">
+
+      <!-- Mobile Banner -->
+      <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765193629/mobileshop-banner_iviejn.jpg"
+        alt="Mobile Banner" class="mobile-banner">
+    </section>
+
+
+    <h2 class="section-title">Our Delivery Journey</h2>
+    <section class="zigzag-timeline">
+
+      <!-- Step 1 (Right) -->
+      <div class="zz-step right">
+        <div class="zz-number">1</div>
+
+        <div class="zz-content">
+          <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765195938/order-received_gu60gd.jpg">
+          <div class="text">
+            <h3>Order Received</h3>
+            <p>Your order is confirmed and we start preparing it with care.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 (Left) -->
+      <div class="zz-step left">
+        <div class="zz-number">2</div>
+
+        <div class="zz-content">
+          <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765195943/pickedFromStore_wmz0al.jpg">
+          <div class="text">
+            <h3>Picked From Store</h3>
+            <p>We pick the perfect product and check it gently.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 (Right) -->
+      <div class="zz-step right">
+        <div class="zz-number">3</div>
+
+        <div class="zz-content">
+          <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765195940/packingOrder_me8sy2.jpg">
+          <div class="text">
+            <h3>Packed With Care</h3>
+            <p>Your order is wrapped safely for a smooth journey.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 (Left) -->
+      <div class="zz-step left">
+        <div class="zz-number">4</div>
+
+        <div class="zz-content">
+          <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765195937/dispatchedTruck_e4ybho.jpg">
+          <div class="text">
+            <h3>Out For Delivery</h3>
+            <p>Your package is on the way — almost there!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5 (Right) -->
+      <div class="zz-step right">
+        <div class="zz-number">5</div>
+
+        <div class="zz-content">
+          <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765195936/delivered_jazyqq.jpg">
+          <div class="text">
+            <h3>Delivered</h3>
+            <p>Your happiness has arrived at your doorstep.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="../index.html">
+          <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765551623/nav-logo_bkc12n.png" alt="Logo">
+        </a>
+        <p>Your one-stop destination for elegant and modest clothing, beauty essentials, and accessories that celebrate
+          grace and style.</p>
+      </div>
+
+      <div class="footer-links">
+        <h2>QUICK LINKS</h2>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Payment Method</a></li>
+          <li><a href="#">Delivery</a></li>
+          <li><a href="#">Return and Exchange</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h2>SHOPPING</h2>
+        <ul>
+          <li><a href="#">Modest Clothing Store</a></li>
+          <li><a href="#">Beauty Products</a></li>
+          <li><a href="#">Books</a></li>
+          <li><a href="#">Accessories</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h2>NEWSLETTER</h2>
+        <p>Be the first to know about new arrivals, special collections, sales, and exclusive offers!</p>
+        <input type="email" placeholder="Your Email">
+        <button>Subscribe</button>
+      </div>
+
+      <hr>
+      <div class="copyright">
+        © 2025 www.SumaiyaModestCollections.com. All rights reserved! | Created By&nbsp;<span
+          style="color: #4a042b;">Sumaiya Dingankar</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toastBox"></div>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const steps = document.querySelectorAll(".zz-step");
+
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      steps.forEach(s => obs.observe(s));
+    });
+  </script>
+  <script src="../assets/js/global.js"></script>
+  <script src="../assets/js/script.js?v=1.0" type="module"></script>
+</body>
+
+</html>

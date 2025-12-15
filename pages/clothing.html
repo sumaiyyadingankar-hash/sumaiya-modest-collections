@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clothing</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196484/bag_nos7ff.png" type="image/png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css?v=1.0">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    main {
+      padding-top: calc(var(--navbar-height, 80px));
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header/Navbar -->
+  <header>
+    <nav class="navbar">
+      <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765551623/nav-logo_bkc12n.png" alt="nav-logo"
+        class="nav-logo">
+
+      <ul class="nav-menu">
+        <button id="menu-close-button" class="fas fa-times"></button>
+        <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="shop.html" class="nav-link">Shop</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="What are you searching for?">
+      </div>
+
+      <div class="nav-icons">
+        <div class="icon home-icon">
+          <a href="../index.html">
+            <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765725575/home_qbxmla.png" alt="Home">
+            <p>Home</p>
+          </a>
+        </div>
+
+        <div class="icon profile-icon">
+          <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196534/user-profile_yvqyuy.png"
+            alt="userprofile">
+          <p>Profile</p>
+        </div>
+        <div class="icon wishlist-icon">
+          <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196538/wishlist_do9wuw.png" alt="wishlist">
+          <p>Wishlist</p>
+          <span class="wishlist-icon-count bag-item-count">0</span>
+
+        </div>
+
+        <div class="icon cart-icon">
+          <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196528/shopping-cart_ygyxc8.png" alt="cart">
+          <p>Cart</p>
+          <span id="cartCount">0</span>
+        </div>
+      </div>
+
+      <button id="menu-open-button" class="fas fa-bars"></button>
+    </nav>
+  </header>
+
+  <!-- Profile Popup Box -->
+  <div id="profilePopup" class="profile-popup">
+    <h3>Please Login Or Register</h3>
+    <div class="popup-buttons">
+      <a href="login.html"><button class="popup-btn">Login</button></a>
+      <a href="register.html"><button class="popup-btn">Register</button></a>
+    </div>
+  </div>
+
+  <!-- Logout Modal -->
+  <div id="logoutModal" class="logout-modal">
+    <div class="logout-content">
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828490.png" class="logout-icon">
+      <h3 class="logout-title">Wait… leaving already?</h3>
+      <p class="logout-sub">Do you really want to log out?</p>
+      <div class="logout-buttons">
+        <button id="cancelLogout" class="btn-cancel">Nope, Stay Logged In</button>
+        <button id="confirmLogout" class="btn-logout">Yes, Log Me Out</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Contact Section -->
+  <main>
+
+    <section class="featured-products">
+      <h2 class="section-title">Clothing Collection</h2>
+
+      <div class="products-container" id="clothingProducts">
+        <!-- Clothing products will render here -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="../index.html">
+          <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765551623/nav-logo_bkc12n.png" alt="Logo">
+        </a>
+        <p>Your one-stop destination for elegant and modest clothing, beauty essentials, and accessories that celebrate
+          grace and style.</p>
+      </div>
+
+      <div class="footer-links">
+        <h2>QUICK LINKS</h2>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Payment Method</a></li>
+          <li><a href="#">Delivery</a></li>
+          <li><a href="#">Return and Exchange</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h2>SHOPPING</h2>
+        <ul>
+          <li><a href="#">Modest Clothing Store</a></li>
+          <li><a href="#">Beauty Products</a></li>
+          <li><a href="#">Books</a></li>
+          <li><a href="#">Accessories</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h2>NEWSLETTER</h2>
+        <p>Be the first to know about new arrivals, special collections, sales, and exclusive offers!</p>
+        <input type="email" placeholder="Your Email">
+        <button>Subscribe</button>
+      </div>
+
+      <hr>
+      <div class="copyright">
+        © 2025 www.SumaiyaModestCollections.com. All rights reserved! | Created By&nbsp;<span
+          style="color: #4a042b;">Sumaiya Dingankar</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toastBox"></div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/global.js"></script>
+  <script src="../assets/js/script.js?v=1.0" type="module"></script>
+  <script src="../assets/js/clothing-products.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Project by Sumaiya Dingankar - HTML, CSS, JS</title>
+
+  <meta name="description"
+    content="A beginner e-commerce project created using HTML, CSS, and JavaScript by Sumaiya Dingankar.">
+  <meta name="keywords" content="HTML, CSS, JavaScript, E-commerce, Sumaiya Dingankar, Beginner Project">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765813235/shopping-bag_jf6egf.png"
+    type="image/png">
+  <!-- Linking font awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Linking custom css -->
+  <link rel="stylesheet" href="./assets/css/style.css?v=1.0">
+  <!-- Linking home css -->
+  <link rel="stylesheet" href="./assets/css/home.css">
+  <!-- Linking google fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <!-- Linking social icons -->
+  <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+
+  <script type="module" src="./assets/js/contact-message.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "31pEB3ciOsV3rPint",
+      });
+    })();
+  </script>
+
+</head>
+
+<body>
+  <!-- Header/Navbar -->
+  <header>
+    <nav class="navbar">
+      <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765551623/nav-logo_bkc12n.png" class="nav-logo">
+
+      <ul class="nav-menu">
+        <button id="menu-close-button" class="fas fa-times"></button>
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="./pages/shop.html" class="nav-link">Shop</a></li>
+        <li class="nav-item"><a href="./pages/blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="./pages/about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="./pages/contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="What are you searching for?">
+      </div>
+
+      <div class="nav-icons">
+
+        <div class="icon home-icon">
+          <a href="index.html">
+            <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765725575/home_qbxmla.png" alt="Home">
+            <p>Home</p>
+          </a>
+        </div>
+
+        <div class="icon profile-icon">
+          <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196534/user-profile_yvqyuy.png"
+            alt="userprofile">
+          <p>Profile</p>
+        </div>
+
+        <div class="icon wishlist-icon">
+          <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196538/wishlist_do9wuw.png" alt="wishlist">
+          <p>Wishlist</p>
+          <span class="wishlist-icon-count bag-item-count">0</span>
+
+        </div>
+
+        <div class="icon cart-icon">
+          <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196528/shopping-cart_ygyxc8.png" alt="cart">
+          <p>Cart</p>
+          <span id="cartCount">0</span>
+        </div>
+
+      </div>
+
+      <button id="menu-open-button" class="fas fa-bars"></button>
+    </nav>
+  </header>
+
+  <!-- Profile Popup Box -->
+  <div id="profilePopup" class="profile-popup">
+    <h3>Please Login Or Register</h3>
+
+    <div class="popup-buttons">
+
+      <a href="./pages/login.html">
+        <button class="popup-btn">Login</button>
+      </a>
+
+      <a href="./pages/register.html">
+        <button class="popup-btn">Register</button>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Logout Modal -->
+  <div id="logoutModal" class="logout-modal">
+    <div class="logout-content">
+
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828490.png" class="logout-icon">
+
+      <h3 class="logout-title">Wait… leaving already?</h3>
+      <p class="logout-sub">Do you really want to log out?</p>
+
+      <div class="logout-buttons">
+        <button id="cancelLogout" class="btn-cancel">Nope, Stay Logged In</button>
+        <button id="confirmLogout" class="btn-logout">Yes, Log Me Out</button>
+      </div>
+
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Hero-Section -->
+    <section class="hero-section">
+      <img class="mobile-cart-img"
+        src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765545877/mobile-cart-removebg-preview_ux250p.png"
+        alt="cart">
+
+      <div class="content">
+        <div class="hero-details">
+          <p class="tagline">WHERE COMFORT MEETS DIGNITY</p>
+          <h2 class="hero-title">EMBRACE YOUR STYLE<br>WITH CONFIDENCE</h2>
+          <p class="hero-description">
+            Welcome to a space where clothing is more than style —
+            a space that respects your values while enhancing your natural elegance.
+            Feel beautiful, confident, and comfortable in every moment.
+          </p>
+          <button><a class="shopNowBtn" href="./pages/shop.html">SHOP NOW</a><i
+              class='bx bx-right-arrow-alt'></i></button>
+
+          <div class="home_social_icons">
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-pinterest'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+      <h2 class="section-title">Featured Products</h2>
+
+      <div class="products-container" id="featuredProducts">
+        <!-- Products will come dynamically from JS -->
+      </div>
+    </section>
+
+    <!-- Banner Section -->
+    <section class="website-banner">
+      <!-- Desktop Banner -->
+      <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765561140/desktop-banner_cnil6e.png"
+        alt="Sale Banner" class="desktop-banner">
+
+      <!-- Mobile Banner -->
+      <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765559182/mobile-banner_pfpy5p.jpg"
+        alt="Mobile Banner" class="mobile-banner">
+    </section>
+
+    <!-- Reviews-Section -->
+    <section class="reviews-section">
+
+      <h2 class="section-title">What Our Customers Say</h2>
+
+      <div class="reviews-main">
+        <button class="arrow-btn left" id="prevBtn">&#10094;</button>
+
+        <div class="reviews-window">
+          <div class="reviews-track">
+
+            <!-- CARD 1 -->
+            <div class="review-card">
+              <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196487/customer1_pifnxz.jpg"
+                class="customer-img">
+              <h3>Falak Ansari</h3>
+              <div class="stars">★★★★★</div>
+              <p>“The quality is amazing and delivery was super fast!”</p>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="review-card">
+              <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196490/customer2_nkj0bn.jpg"
+                class="customer-img">
+              <h3>Umama Parkar</h3>
+              <div class="stars">★★★★★</div>
+              <p>“Great store with beautiful products!”</p>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="review-card">
+              <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196493/customer3_af5guh.jpg"
+                class="customer-img">
+              <h3>Nida Nore</h3>
+              <div class="stars">★★★★★</div>
+              <p>“Super good service, will buy again!”</p>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="review-card">
+              <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196502/customer6_obq7jx.jpg"
+                class="customer-img">
+              <h3>Sumaiya Palnak</h3>
+              <div class="stars">★★★★★</div>
+              <p>“Affordable and modest wear... loved it!”</p>
+            </div>
+
+
+            <!-- CARD 5 -->
+            <div class="review-card">
+              <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196496/customer4_f0fv4u.jpg"
+                class="customer-img">
+              <h3>Amal Deshmukh</h3>
+              <div class="stars">★★★★★</div>
+              <p>“Beautiful designs and amazing fabric!”</p>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="review-card">
+              <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765815227/customer-profile_xztgac.jpg"
+                class="customer-img">
+              <h3>Ammara Hamdare</h3>
+              <div class="stars">★★★★★</div>
+              <p>“Absolutely satisfied — will definitely order again.”</p>
+            </div>
+
+
+          </div>
+        </div>
+
+        <button class="arrow-btn right" id="nextBtn">&#10095;</button>
+      </div>
+
+      <div class="slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+
+    <!-- Contact-Section -->
+    <section class="contact-info">
+      <div class="contact-container">
+        <div class="contact-details">
+          <p class="info-title">NEED HELP?</p>
+          <h1>Get in Touch</h1>
+          <p>Have a question about your order, delivery, or product details?
+            Feel free to message us anytime — we’re happy to assist you</p>
+          <h2>Customer Support</h2>
+          <p>Available Sunday – Friday<br>
+            Response within 24 hours, InShaAllah</p>
+          <h2>About Our Store</h2>
+          <p>Sumaiya Modest Collection is an online modest wear store,
+            serving customers with love and care</p>
+        </div>
+        <div class="contact-form">
+          <div class="input-row">
+            <input type="text" placeholder="Enter Your Name" id="name">
+            <input type="email" placeholder="Email" id="email">
+          </div>
+          <textarea placeholder="Message" id="message"></textarea>
+          <button onclick="sendMail()">SEND MESSAGE</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer-Section -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html">
+          <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765551623/nav-logo_bkc12n.png">
+        </a>
+        <p>Your one-stop destination for elegant and modest clothing, beauty essentials, and accessories that celebrate
+          grace and style.</p>
+      </div>
+
+      <div class="footer-links">
+        <h2>QUICK LINKS</h2>
+        <ul>
+          <li><a href="./pages/contact.html">Contact Us</a></li>
+          <li><a href="./pages/checkout.html">Payment Method</a></li>
+          <li><a href="#">Delivery</a></li>
+          <li><a href="#">Return and Exchange</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h2>SHOPPING</h2>
+        <ul>
+          <li><a href="./pages/clothing.html"> Modest Clothing Store</a></li>
+          <li><a href="./pages/beauty.html">Beauty Products</a></li>
+          <li><a href="./pages/books.html">Books</a></li>
+          <li><a href="./pages/accessories.html">Accessories</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h2>NESLETTER</h2>
+        <p>Be the first to know about new arrivals, special collections, sales, and exclusive offers!</p>
+        <input type="email" placeholder="Your Email">
+        <button>Subscribe</button>
+      </div>
+      <hr>
+      <div class="copyright">
+        © 2025 www.SumaiyaModestCollections.com. All rights reserved! | Created By&nbsp;<span
+          style="color: #4a042b;">Sumaiya Dingankar</span>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toastBox"></div>
+
+  <script>
+    const track = document.querySelector(".reviews-track");
+    const cards = document.querySelectorAll(".review-card");
+    const dots = document.querySelectorAll(".dot");
+
+    let index = 0;
+
+    // Calculate card width dynamically (IMPORTANT)
+    function getCardShift() {
+      const style = window.getComputedStyle(track);
+      const gap = parseInt(style.gap);
+      return cards[0].offsetWidth + gap;
+    }
+
+    function updateSlider() {
+      const shift = getCardShift();
+      track.style.transform = `translateX(-${index * shift}px)`;
+
+      dots.forEach(dot => dot.classList.remove("active"));
+      dots[index].classList.add("active");
+    }
+
+    // Next Button
+    document.getElementById("nextBtn").onclick = () => {
+      if (index < cards.length - 1) {
+        index++;
+        updateSlider();
+      }
+    };
+
+    // Prev Button
+    document.getElementById("prevBtn").onclick = () => {
+      if (index > 0) {
+        index--;
+        updateSlider();
+      }
+    };
+
+    // Dots
+    dots.forEach((dot, i) => {
+      dot.onclick = () => {
+        index = i;
+        updateSlider();
+      };
+    });
+
+    // FIX MOBILE ISSUE AFTER RESIZE (very important)
+    window.addEventListener("resize", updateSlider);
+  </script>
+
+  <script src="./assets/js/global.js"></script>
+  <script src="./assets/js/featured-products.js"></script>
+  <script src="./assets/js/script.js?v=1.0" type="module"></script>
+</body>
+
+</html>
