@@ -76,28 +76,34 @@
   letter-spacing: 1px;
 }
 
-.hero-section .hero-details button {
+
+.hero-section .hero-details .shopNowBtn {
   background-color: var(--secondary-color);
   color: var(--white-color);
-  /* background-color: rgba(255, 255, 255, 0.8); 
-  color: var(--black-color);  */
   border: none;
-  padding: 10px 20px;
+  padding: 8px 20px;
   border-radius: 0px;
   cursor: pointer;
   font-size: var(--font-size-m);
   margin: 20px 0;
   transition: background-color 0.3s;
+  font-family: 'poppins';
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
-.hero-section .hero-details button:hover {
+.hero-section .hero-details .shopNowBtn:hover {
   background-color: var(--hover-state);
   color: var(--white-color);
 }
 
-.hero-section .hero-details button a {
+.hero-section .hero-details .shopNowBtn {
   color: inherit;
-  /* Inherit color from button */
+}
+
+.hero-section .hero-details .shopNowBtn i {
+  font-size: 20px;
 }
 
 .home_social_icons {
@@ -252,4 +258,5 @@
     font-size: var(--font-size-l);
   }
 }
+
 
