@@ -1,0 +1,121 @@
+body {
+  background: #e6e6e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+.container {
+  width: 360px;
+  background: var(--white-color);
+  border-radius: var(--border-radius-l);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: fadeInUp 1s ease;
+}
+
+.shape-area {
+  background: var(--secondary-color);
+  height: 180px;
+  border-bottom-right-radius: 70px;
+  border-bottom-left-radius: 10px;
+  position: relative;
+  padding: 20px;
+  color: var(--white-color);
+}
+
+.shape-area .back-btn {
+  font-size: var(--font-size-l);
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  cursor: pointer;
+}
+
+.shape-area h2 {
+  margin-top: 60px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.3;
+}
+
+.bottom-links a {
+  color: var(--mulberry-color);
+}
+
+.bottom-links a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Reset Password Page Responsive:Common css ===== */
+@media screen and (max-width: 400px) {
+
+  /* Adjusting font size on smaller screens */
+  :root {
+    --font-size-m: 1rem;
+    /*16px*/
+    --font-size-l: 1.3rem;
+    /*20.8px*/
+    --font-size-xl: 1.5rem;
+    /*24px*/
+    --font-size-xxl: 1.8rem;
+    /*28.8px*/
+  }
+
+  body {
+    padding: 20px 15px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+  }
+
+  .shape-area {
+    height: 150px;
+    padding: 15px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 10px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--hover-state));
+  }
+
+  .shape-area h2 {
+    margin-top: 40px;
+    font-size: var(--font-size-xl);
+  }
+
+  .shape-area .back-btn,
+  .shape-area .signup-btn {
+    /* font-size: 18px; */
+    font-size: var(--font-size-m);
+    top: 12px;
+  }
+
+  .bottom-links {
+    padding: 15px 20px 20px;
+    font-size: 13px;
+  }
+
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

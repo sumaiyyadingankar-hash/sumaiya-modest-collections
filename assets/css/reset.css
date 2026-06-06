@@ -1,0 +1,56 @@
+.reset-form {
+  padding: 30px;
+}
+
+.reset-form label {
+  display: block;
+  font-size: var(--font-size-s);
+  margin: 12px 0 5px;
+}
+
+.reset-form input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--mulberry-color);
+  padding: 8px 0;
+  font-size: var(--font-size-s);
+  outline: none;
+}
+
+.reset-btn {
+  width: 100%;
+  margin-top: 28px;
+  background: var(--secondary-color);
+  color: var(--white-color);
+  padding: 12px 0;
+  border-radius: var(--border-radius-xl);
+  font-size: var(--font-size-n);
+  font-weight: var(--font-weight-medium);
+  transition: 0.3s;
+}
+
+.reset-btn:hover {
+  background: var(--hover-state);
+}
+
+/*PHONE RESPONSIVE*/
+@media screen and (max-width: 400px) {
+
+  .reset-form {
+    padding: 20px;
+  }
+
+  .reset-form label {
+    font-size: 13px;
+  }
+
+  .reset-form input {
+    font-size: 13px;
+    padding: 6px 0;
+  }
+
+  .reset-btn {
+    padding: 10px 0;
+    font-size: var(--font-size-s);
+  }
+}

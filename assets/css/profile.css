@@ -1,0 +1,230 @@
+body {
+    background: linear-gradient(145deg, #f0f4f8, #ffffff);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-wrapper {
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--white-color);
+    border: none;
+    font-size: var(--font-size-m);
+    padding: 10px 14px;
+    border-radius: var(--border-radius-n);
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    transform: translateY(-2px);
+    background: #f5f5f5;
+}
+
+.title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: #333;
+    margin-top: 20px;
+}
+
+.divider-img {
+    width: 280px;
+    margin: 0px 0 30px;
+    opacity: 0.8;
+}
+
+.profile-card {
+    width: 90%;
+    max-width: 450px;
+    margin: 0 auto;
+    background: var(--white-color);
+    padding: 35px 25px;
+    border-radius: var(--border-radius-l);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow-wrap: break-word;
+    /* <-- allow long text to wrap */
+}
+
+.user-info .info-item span {
+    flex: 1;
+    word-break: break-word;
+    /* <-- break long emails/words */
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Profile Image Border */
+.image-border {
+    width: 170px;
+    height: 170px;
+    border-radius: var(--border-radius-circle);
+    padding: 6px;
+    margin: auto;
+    background: linear-gradient(135deg, #b45c7b, #9f4f6c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.image-border img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius-circle);
+    object-fit: cover;
+}
+
+.image-border:hover {
+    transform: scale(1.05);
+}
+
+#userName {
+    margin-top: 20px;
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    color: var(--black-color);
+}
+
+.role {
+    margin-top: 6px;
+    font-size: var(--font-size-n);
+    color: #888;
+}
+
+.user-info {
+    margin-top: 25px;
+    text-align: left;
+    font-size: var(--font-size-n);
+    line-height: 2;
+    color: #555;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.user-info .info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: var(--border-radius-m);
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+.user-info .info-item:hover {
+    background: var(--primary-color);
+    transform: translateX(5px);
+    color: var(--black-color);
+}
+
+.user-info .info-item img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.user-info .info-item span {
+    flex: 1;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+
+/* Tablets & small screens */
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .divider-img {
+        width: 240px;
+    }
+
+    .profile-card {
+        padding: 30px 20px;
+    }
+
+    .image-border {
+        width: 140px;
+        height: 140px;
+    }
+
+    #userName {
+        font-size: 22px;
+    }
+
+    .role {
+        font-size: 14px;
+    }
+
+    .user-info {
+        font-size: 15px;
+    }
+
+    .user-info .info-item img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 24px;
+    }
+
+    .divider-img {
+        width: 180px;
+        margin-bottom: 20px;
+    }
+
+    .profile-card {
+        padding: 25px 15px;
+    }
+
+    .image-border {
+        width: 120px;
+        height: 120px;
+    }
+
+    #userName {
+        font-size: 20px;
+    }
+
+    .role {
+        font-size: 13px;
+    }
+
+    .user-info {
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    .user-info .info-item img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .back-btn {
+        top: 10px;
+        left: 10px;
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+}

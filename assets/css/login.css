@@ -1,0 +1,74 @@
+.signup-btn {
+  right: 18px;
+}
+
+.login-form {
+  padding: 30px;
+}
+
+.login-form label {
+  display: block;
+  font-size: var(--font-size-s);
+  margin: 12px 0 5px;
+}
+
+.login-form input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--mulberry-color);
+  padding: 8px 0;
+  font-size: var(--font-size-s);
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.login-form input:focus {
+  border-bottom-color: var(--secondary-color);
+  transform: scale(1.02);
+}
+
+.login-btn {
+  width: 100%;
+  margin-top: 28px;
+  background: var(--secondary-color);
+  color: var(--white-color);
+  padding: 12px 0;
+  border-radius: var(--border-radius-xl);
+  font-size: var(--font-size-n);
+  font-weight: var(--font-weight-medium);
+  transition: 0.3s ease;
+}
+
+.login-btn:hover {
+  background: var(--hover-state);
+}
+
+.bottom-links {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px 30px;
+  font-size: var(--font-size-s);
+}
+
+/* PHONE RESPONSIVE */
+@media screen and (max-width: 400px) {
+
+  .login-form {
+    padding: 22px;
+  }
+
+  .login-form label {
+    font-size: 13px;
+  }
+
+  .login-form input {
+    font-size: 13px;
+    padding: 6px 0;
+  }
+
+  .login-btn {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+}

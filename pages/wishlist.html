@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="icon" href="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196544/wishlist-favicon_w4rx3o.png"
+        type="image/png">
+    <link rel="stylesheet" href="../assets/css/style.css?v=1.0">
+    <link rel="stylesheet" href="../assets/css/cartwishlist-common.css">
+    <link rel="stylesheet" href="../assets/css/wishlist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Back Button -->
+    <button class="back-btn" onclick="history.back()">
+        <i class="fa-solid fa-arrow-left"></i>
+    </button>
+
+    <div class="wishlist-container">
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-box">
+            <img src="https://res.cloudinary.com/dzpjquuvs/image/upload/v1765196542/wishlist1_cf6smx.png"
+                class="empty-img">
+            <h3>Your Wishlist is Empty!</h3>
+            <p>You haven’t saved any items yet.</p>
+            <a href="./shop.html" class="shop-btn">Start Shopping</a>
+        </div>
+
+        <!-- Products Section -->
+        <div id="wishlistItems" class="wishlist-grid"></div>
+
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastBox"></div>
+
+    <script src="../assets/js/global.js"></script>
+    <script src="../assets/js/wishlist.js?v=1.0"></script>
+</body>
+
+</html>

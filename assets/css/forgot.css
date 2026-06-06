@@ -1,0 +1,81 @@
+.forgot-form {
+  padding: 30px;
+}
+
+.text-info {
+  font-size: var(--font-size-s);
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.forgot-form label {
+  display: block;
+  font-size: var(--font-size-s);
+  margin: 12px 0 5px;
+}
+
+.forgot-form input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--mulberry-color);
+  padding: 8px 0;
+  font-size: var(--font-size-s);
+  outline: none;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.forgot-form input:focus {
+  border-color: var(--secondary-color);
+  transform: scale(1.02);
+}
+
+.reset-btn {
+  width: 100%;
+  margin-top: 25px;
+  background: var(--secondary-color);
+  color: var(--white-color);
+  padding: 12px 0;
+  border-radius: var(--border-radius-xl);
+  font-size: var(--font-size-n);
+  font-weight: var(--font-weight-medium);
+  transition: 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: var(--hover-state);
+  transform: translateY(-2px);
+}
+
+.bottom-links {
+  display: flex;
+  justify-content: center;
+  padding: 20px 30px 30px;
+  font-size: var(--font-size-s);
+}
+
+
+/*PHONE RESPONSIVE*/
+@media screen and (max-width: 400px) {
+
+  .forgot-form {
+    padding: 20px;
+  }
+
+  .text-info {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .forgot-form label,
+  .forgot-form input,
+  .reset-btn,
+  .bottom-links,
+  .bottom-links a {
+    font-size: 13px;
+  }
+
+  .reset-btn {
+    padding: 10px 0;
+  }
+
+}
